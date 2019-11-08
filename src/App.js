@@ -2,25 +2,57 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {value: ''}
+  }
+  display(){
+    return alert("The submit button has been pressed")
+  }
+  render()
+  {
   return (
+    <div>
+      <div className = "test">
+      <a 
+      href = "https://gmail.com"
+      
+      >
+        Gmail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </a>
+      <a
+      href = "https://www.google.com/imghp?hl=en"
+      >
+        Images&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </a>
+      
+      </div>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"} className="App-logo" alt="logo" />
+        <form>
+          <label>
+            <input type = 'text' />
+ 
+            <button onClick = {this.display}>
+              Submit
+              </button>
+          </label>
+        </form>
+        <br />
+        <select>
+        <option> Hindi </option>
+        <option> Malay </option>
+        <option> Mandarin </option>
+        <option selected value = 'english'> English </option>
+        </select>
       </header>
+    </div>
     </div>
   );
 }
+}
+
 
 export default App;
