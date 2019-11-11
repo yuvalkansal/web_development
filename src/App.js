@@ -7,10 +7,11 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.handleInput = this.handleInput.bind(this);
+    this.display = this.display.bind(this);
     this.state = {value: ''}
   }
-  display(x){
-    return alert('The',x.value,'button has been pressed')
+  display(){
+    return alert(`The value ${this.state.value} has been pressed`)
   }
   handleInput(e){
     this.setState({value: e.target.value})
@@ -39,9 +40,9 @@ class App extends React.Component {
         <img src={"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"} className="App-logo" alt="logo" />
         <form>
           <label>
-            <input type = 'number' onChange = {this.handleInput} />
+            <input type = 'text' onChange = {this.handleInput} />
             </label>
-            <button onClick = {this.display = this.state}>
+            <button onClick = {this.display}>
               Submit
             </button>
           
